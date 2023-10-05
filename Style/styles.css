@@ -1,0 +1,44 @@
+#header{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 82px;
+    border-radius:8;
+    background: #1976d2;
+    background-blend-mode: normal;
+}
+#logoGroup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+}
+#nomClinica{
+    color: white;
+    font-family: "Open Sans";
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+#logo{
+    margin-right: 15;
+    width: 69px;
+    height: 69;
+
+}
+
+#login{
+    background-color: #BBDEFB;
+    position: absolute;
+    left: 415px;
+    top: 136px;
+    width: 450px;
+    height: 496px;
+    border-radius: 10px;
+    background: #bbdefb;
+    background-blend-mode: normal;
+    
+}
+
