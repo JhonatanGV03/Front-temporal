@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="Style/loginStyle.css" rel="stylesheet" type="text/css">
+    <script> src="JS/login.js" </script>
     <title>Inicio de Sesión</title>
 </head>
 <body>
@@ -14,13 +15,13 @@
     </header>
 
     <div class="wrapper">
-        <form action="">
+        <form id="formulario" onsubmit="enviarFormulario(event)">
             <h1 class="title">Iniciar Sesion</h1>
             <div class="input-box">
-                <input type="text"  placeholder="Usuario" required>
+                <input type="text" id="usuario" placeholder="Usuario" required>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Contraseña" required>
+                <input type="password" id="contrasena" placeholder="Contraseña" required>
             </div>
 
             <div class="recuperarContrasena">
@@ -32,7 +33,7 @@
             </div>
 
             <div class="linkRegistro">
-                <p>¿Aún no tienes cuenta? <br><a href="#">Crear cuenta como paciente</a></p>
+                <p>¿Aún no tienes cuenta? <br><a href="signUp.html">Crear cuenta como paciente</a></p>
             </div>
         </form>
     </div>
