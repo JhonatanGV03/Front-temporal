@@ -1,0 +1,229 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.header{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 82px;
+  background: #1976d2;
+  background-blend-mode: normal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/*Estilos para el logo y nombre de la clinica del encabezado*/
+.logoGroup{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: row;
+  margin-left: 10px;
+}
+.nomClinica{
+  color: white;
+  font-family: "Open Sans";
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+}
+.logo{
+  margin-right: 15px;
+  width: 69px;
+  height: 69px;
+
+}
+
+/*Estilos opciones de secciones del encabezado*/
+.navBar{
+  display: flex;
+  align-items: center;
+}
+.navBar > a{
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  
+}
+.separator {
+  border-left: 1px solid #d8d8d8; 
+  height: 60px; 
+  width: 2px;
+  margin-left: 20px;
+  margin-right: 20px;
+  opacity:70%;
+}
+
+
+
+/*Estilos para el encabezado del contenedor*/
+.user{
+  display: flex;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.user p{
+  color: #ffffff;
+  font-family: "Open Sans";
+  text-align: right;
+
+}
+.user .foto{
+  width: 73px;
+  height: 73px;
+  margin-left: 10px;
+}
+.user a{
+  text-decoration: none;
+}
+
+/* Estilos para el contenedor principal */
+#infoPersonal {
+  max-width: 80%;
+  margin: auto;
+  margin-top: 100px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+   
+}
+
+/* Estilos para los contenedores de campos */
+.campo-container {
+  display: block;
+  margin-bottom: 10px;
+  margin: 10px auto;
+}
+
+/* Estilos para las etiquetas de campos */
+.campo-container label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 40px;
+}
+
+/* Estilos para los campos de entrada y selección */
+.campo-container input,
+.campo-container select {
+  width: 80%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px 40px;
+}
+
+/* Estilos para el título */
+#infoPersonal h3 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  text-align: left;
+  grid-column: 1 / span 2;
+  margin: 10px 40px;
+}
+
+#divButton{
+    margin-left: 100px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Estilos para los controles (botones y campos de entrada) */
+#controls {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #1f53c5;
+  font-family: 'Calibri', sans-serif;
+  font-size: 18px;
+}
+
+/* Estilos para los botones "Enviar" y "Añadir" */
+#enviar{
+  grid-column: span 1;
+  background-color: #007bfe;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  margin-bottom: 16px;
+  margin-top: 10px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+}
+
+#añadir {
+  grid-column: span 1;
+  background-color: #007bfe;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  margin-bottom: 16px;
+  margin-top: 10px;
+  margin: 10px 40px
+  
+}
+
+/* Estilos para los botones al pasar el mouse */
+#enviar:hover,
+#añadir:hover {
+  background-color: #00034f;
+}
+
+/* Estilos para los iconos */
+.campo-container i {
+  font-size: 100px;
+  color: #0b0c0c;
+  margin-left: 100px;
+  align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+/* Estilos para los contenedores de selección en línea */
+.select-container {
+  display: inline-block;
+  margin-right: 10px;
+  width: 220px; /* Ajusta el ancho según tus preferencias */
+  height: 30px; /* Ajusta la altura según tus preferencias */
+  font-size: 16px; 
+  
+}
+
+
+#btnInicioSesion{
+    background-color: white;
+    margin-right: 40px;
+    margin-left: auto;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    font-family: "Open Sans";
+    border: none;
+    border-radius: 20px;
+    height: 30px;
+    margin-top: 25px;
+}

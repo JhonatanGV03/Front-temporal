@@ -1,42 +1,71 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="Style/headerPatientStyle.css" rel="stylesheet" type="text/css">
-    <script> src="JS/mainPaciente.js" </script>
-    <title>Bienvenido</title>
+    <link href="Style/stylesinfoPersonal.css" rel="stylesheet" type="text/css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <title>Información Personal</title>
 </head>
-<body>
-    <header class="header">
-        <div class="logoGroup">
-            <img src="images/logo.png" class="logo">
-            <h2 class="nomClinica">Clinica Aurora</h2>
+
+    <header id="header">
+        <div id="logoGroup">
+            <img src="images/logo.png" id="logo">
+            <h2 id="nomClinica">Clinica Aurora</h2>
+            <button id="btnInicioSesion">Iniciar Sesión</button>
         </div>
-
-        <div class="navBar">
-            <a href="index.html">Salir</a>
-            <div class="separator"></div>
-            <a href="#">PQRS</a>
-            <div class="separator"></div>
-            <a href="#">Historial Medico</a>
-            <div class="separator"></div>
-            <a href="#">Agendar Cita</a>
-            <div class="separator"></div>
-        
-            <div class="user">
-                <a href="infoPersonal.html">
-                <div>  
-                    <p style="font-size: 19px; font-weight: 700; margin-top: 20px;">nomPaciente </p>
-                    <p style="font-size: 16px; font-weight: 400; margin-top: -23px;">Paciente</p>
-                </div>
-                </a>
-
-                <img src="images/userLogo.png" class="foto">
-            </div>
-
-        </div>
-
     </header>
+    
+    <form id="infoPersonal">
+        <h3>Crear Cuenta</h3>
+
+    <div class="campo-container">
+
+        <input id="controls" type="correo" name="correo" id="correo" placeholder="Correo electronico">
+        <input id="controls" type="password" name="password" id="password" placeholder="Contraseña">
+        <input id="controls" type="text" name="nombres" id="nombres" placeholder="Nombre">
+        <input id="controls" name="cedula" id="cedula" placeholder="Numero de cedula">
+        <input id="controls" name="Telefono" id="Telefono" placeholder="Numero de Telefono">
+        <input id="controls" name="ciudad" id="ciudad" placeholder="Ciudad de residencia">
+    </div>
+
+    <div class="campo-container">    
+    
+        <div class="campo-container1">
+        <button id="añadir" type="submit">Añadir Foto</button>
+        <i class="fas fa-image" style="margin-right: 200px; vertical-align: middle;"></i>
+        </div>
+
+        <div class="campo-container">
+           
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+        </div>
+
+        <input id="controls" name="alergias" id="alergias" placeholder="Alergias">
+        <input id="controls" name="eps" id="eps" placeholder="EPS">
+    
+    <div class="select-container">
+        <select id="controls" name="grupoSanguineo">
+            <option disabled selected value="">Grupo sanguíneo</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="O">O</option>
+            <option value="AB">AB</option>
+        </select>
+
+    </div>
+
+    <div class="select-container">
+        <select id="controls" name="RH">
+            <option disabled selected value="">RH</option>
+            <option value="Positivo">Positivo</option>
+            <option value="Negativo">Negativo</option>
+        </select>
+    </div>
+    </div>
+  
+        <button id="enviar"type="submit">Crear Cuenta</button>
+
+    </form>
 </body>
 </html>

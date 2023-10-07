@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Style/stylesactualizarInfo.css" rel="stylesheet" type="text/css"> 
+    <title>Información Personal</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logoGroup">
+            <img src="images/logo.png" class="logo">
+            <h2 class="nomClinica">Clinica Aurora</h2>
+        </div>
+
+        <div class="navBar">
+            <a href="index.html">Salir</a>
+            <div class="separator"></div>
+            <a href="#">PQRS</a>
+            <div class="separator"></div>
+            <a href="#">Historial Medico</a>
+            <div class="separator"></div>
+            <a href="#">Agendar Cita</a>
+            <div class="separator"></div>
+        
+            <div class="user">
+                <a href="infoPersonal.html">
+                <div>  
+                    <p style="font-size: 19px; font-weight: 700; margin-top: 20px;">nomPaciente </p>
+                    <p style="font-size: 16px; font-weight: 400; margin-top: -23px;">Paciente</p>
+                </div>
+                </a>
+
+                <img src="images/userLogo.png" class="foto">
+            </div>
+
+        </div>
+
+    </header>
+    <form id="infoPersonal">
+        <h3>Información Personal</h3>
+
+    <div class="campo-container">
+
+        <label>Correo Electronico</label>
+        <input id="controls" type="correo" name="correo" id="correo" placeholder="Correo electronico">
+        <label>Contraseña</label>
+        <input id="controls" type="password" name="password" id="password" placeholder="Contraseña">
+        <label>Nombre</label>
+        <input id="controls" type="text" name="nombres" id="nombres" placeholder="Nombre">
+        <label>Cédula</label>
+        <input id="controls" name="cedula" id="cedula" placeholder="Numero de cédula">
+        <label>Teléfono</label>
+        <input id="controls" name="Telefono" id="Telefono" placeholder="Numero de Teléfono">
+    </div>
+
+    <div class="campo-container">    
+        <label>Ciudad de Residencia</label>
+        <input type="date" id="controls" name="fechaNacimiento">
+        <label>Alergias</label>
+        <input id="controls" name="alergias" id="alergias" placeholder="Alergias">
+        <label>EPS</label>
+        <input id="controls" name="eps" id="eps" placeholder="EPS">
+    
+    <div class="select-container">
+        <label>Grupo Sanguineo</label>
+        <select id="controls" name="grupoSanguineo">
+            <option disabled selected value="">Grupo sanguíneo</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="O">O</option>
+            <option value="AB">AB</option>
+        </select>
+    </div>
+
+    <div class="select-container">
+        <label>Factor R.H</label>
+        <select id="controls" name="RH">
+            <option disabled selected value="">RH</option>
+            <option value="Positivo">Positivo</option>
+            <option value="Negativo">Negativo</option>
+        </select>
+    </div>
+    </div>
+    <div id="divButton">
+        <button id="enviar"type="submit">Crear Cuenta</button>
+        <button id="enviar"type="submit">Guardar y Volver</button>
+        <button id="enviar"type="submit">Eliminar Cuenta</button>
+    </div>    
+    </form>
+</body>
+</html>
