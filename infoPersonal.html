@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="Style/stylesinfoPersonal.css" rel="stylesheet" type="text/css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-    <title>Información Personal</title>
+    <title>Crear Cuenta</title>
 </head>
 
     <header id="header">
         <div id="logoGroup">
             <img src="images/logo.png" id="logo">
             <h2 id="nomClinica">Clinica Aurora</h2>
-            <button id="btnInicioSesion">Iniciar Sesión</button>
+            <a href="index.html" class="btnContainer">
+            <button class="btnLogin">Iniciar Sesión</button>
+            </a>
         </div>
     </header>
     
@@ -37,7 +39,7 @@
         </div>
 
         <div class="campo-container">
-           
+            <label for="fechaNacimiento" style="display: inline-block; vertical-align: top;">Fecha de Nacimiento:</label>
                 <input type="date" id="fechaNacimiento" name="fechaNacimiento">
         </div>
 
