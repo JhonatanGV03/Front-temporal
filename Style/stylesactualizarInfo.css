@@ -88,10 +88,10 @@ body{
 
 /* Estilos para el contenedor principal */
 #infoPersonal {
-  max-width: 80%;
+  max-width: 100%;
   margin: auto;
   margin-top: 100px;
-  padding: 20px;
+  padding: 20px ;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
@@ -99,6 +99,7 @@ body{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  width: 50%;
    
 }
 
@@ -159,16 +160,14 @@ body{
   background-color: #007bfe;
   color: #ffffff;
   border: none;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border-radius: 5px;
   cursor: pointer;
   width: 100px;
   height: 50px;
   margin-bottom: 16px;
   margin-top: 10px;
-  margin: 10px auto;
-  display: flex;
-  flex-direction: row;
+  margin-left: 20px;
 }
 
 #añadir {
@@ -212,6 +211,9 @@ body{
   width: 200px;
 }
 
+.select-container2{
+  width: 105%;
+}
 
 #btnInicioSesion{
     background-color: white;
