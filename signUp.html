@@ -37,7 +37,12 @@
         <input class="controls" type="text" name="nombres" id="nombres" placeholder="Nombre">
         <input class="controls" name="cedula" id="cedula" placeholder="Numero de cedula">
         <input class="controls" name="Telefono" id="Telefono" placeholder="Numero de Telefono">
-        <input class="controls" name="ciudad" id="ciudad" placeholder="Ciudad de residencia">
+        <div class="select-container2">
+            <select class="controls" name="ciudad">
+                <option disabled selected value="">Ciudad de residencia</option>
+                <option value="ARMENIA">Armenia</option>
+            </select>
+        </div>
     </div>
 
     <div class="campo-container">    
@@ -53,28 +58,28 @@
         </div>
 
         <input class="controls" name="alergias" id="alergias" placeholder="Alergias">
-        <input class="controls" name="eps" id="eps" placeholder="EPS">
-    
-    <div class="select-container">
-        <select class="controls" name="grupoSanguineo">
-            <option disabled selected value="">Grupo sanguíneo</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="O">O</option>
-            <option value="AB">AB</option>
-        </select>
 
-    </div>
+        <div class="select-container2">
+            <select class="controls" name="eps">
+                <option disabled selected value="">EPS</option>
+                <option value="SURA">SURA</option>
+            </select>
+        </div>
+        <div class="select-container2">
+            <select class="controls" name="grupoSanguineo">
+                <option disabled selected value="">Grupo sanguíneo</option>
+                <option value="A_POSITIVO">A+</option>
+                <option value="A_NEGATIVO">A-</option>
+                <option value="B_POSITIVO">B+</option>
+                <option value="B_NEGATIVO">B-</option>
+                <option value="O_POSITIVO">O+</option>
+                <option value="O_NEGATIVO">O-</option>
+                <option value="AB_POSITIVO">AB+</option>
+                <option value="AB_NEGATIVO">AB-</option>
+            </select>
 
-    <div class="select-container">
-        <select id="controls" name="RH">
-            <option disabled selected value="">RH</option>
-            <option value="Positivo">Positivo</option>
-            <option value="Negativo">Negativo</option>
-        </select>
+        </div>
     </div>
-    </div>
-  
         <button id="enviar" type="submit">Crear Cuenta</button>
 
     </form>

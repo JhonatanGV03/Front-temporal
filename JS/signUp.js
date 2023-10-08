@@ -19,7 +19,6 @@ let crearCuenta = async () => {
     campos.alergias = document.getElementById('alergias').value;
     campos.eps = document.getElementById('eps').value;
     campos.grupoSanguineo = document.getElementById('grupoSanguineo').value;
-    campos.RH = document.getElementById('RH').value;
     console.log("si funciona yupiii");
 
 

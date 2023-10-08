@@ -111,8 +111,7 @@
   width: 100px;
   height: 50px;
   margin-bottom: 16px;
-  margin-top: 10px;
-  margin: 10px auto;
+    margin: 10px auto;
 }
 
 #añadir {
@@ -149,11 +148,14 @@
 /* Estilos para los contenedores de selección en línea */
 .select-container {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 100px;
   width: 220px; /* Ajusta el ancho según tus preferencias */
   height: 30px; /* Ajusta la altura según tus preferencias */
-  font-size: 16px; 
+  font-size: 16px;
   
+}
+.select-container2{
+    width: 105%;
 }
 
 .btnContainer{

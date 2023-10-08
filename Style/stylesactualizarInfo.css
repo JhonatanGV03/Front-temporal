@@ -207,10 +207,9 @@ body{
 .select-container {
   display: inline-block;
   margin-right: 10px;
-  width: 220px; /* Ajusta el ancho según tus preferencias */
   height: 30px; /* Ajusta la altura según tus preferencias */
   font-size: 16px; 
-  
+  width: 200px;
 }
 
 
