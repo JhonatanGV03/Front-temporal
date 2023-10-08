@@ -1,6 +1,6 @@
 #ProyectoSoftware_2 (Frontend)
-Integrantes:
 
+Integrantes:
 - Julian David Cruz Cancimance
 - Cristian Alexander Bedón Astudillo
 - Daniela Torres Garzon
