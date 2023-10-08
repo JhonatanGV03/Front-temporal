@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="Style/stylesinfoPersonal.css" rel="stylesheet" type="text/css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <script> src="JS/signUp.js" </script>
     <title>Crear Cuenta</title>
 </head>
     <style>
@@ -21,12 +22,12 @@
         </div>
         <div>
             <a href="index.html" class="btnContainer">
-                <button id="btnInicioSesion">Iniciar Sesión</button>
+                <button id="btnLogin">Iniciar Sesión</button>
             </a>
         </div>
     </header>
     
-    <form id="infoPersonal">
+    <form id="infoPersonal" method="get">
         <h3>Crear Cuenta</h3>
 
     <div class="campo-container">
@@ -74,7 +75,7 @@
     </div>
     </div>
   
-        <button id="enviar"type="submit">Crear Cuenta</button>
+        <button id="enviar" type="submit">Crear Cuenta</button>
 
     </form>
 </body>

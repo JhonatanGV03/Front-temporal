@@ -1,25 +1,22 @@
-function enviarFormulario(event) {
-    event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
 
-    // Obtener los valores del formulario
-    var usuario = document.getElementById('usuario').value;
-    var contrasena = document.getElementById('contrasena').value;
+let boton = document.getElementById('btnLogin');
 
-    // Aquí puedes realizar alguna validación de los datos si es necesario
+boton.addEventListener('click', event=> {
+    iniciarSesion();
+});
+let iniciarSesion = async () => {
 
-    // Enviar los datos al servidor (puedes usar Fetch API o AJAX)
-    // Por ejemplo usando Fetch API:
-    fetch('URL_DEL_BACKEND', {
-        method: 'POST',
+    let campos = {}
+
+    campos.usuario = document.getElementById('usuario').value;
+    campos.contrasena = document.getElementById('contrasena').value;
+
+    const peticion = await fetch("http://127.0.0.1:8081/api/paciente/iniciarSesion", {
+        method: 'GET',
         headers: {
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({usuario: usuario, contrasena: contrasena})
-    })
-        .then(response => response.json())
-        .then(data => {
-            // Aquí puedes manejar la respuesta del servidor
-            console.log(data);
-        })
-        .catch(error => console.error('Error:', error));
+        body: JSON.stringify(campos)
+    });
 }
