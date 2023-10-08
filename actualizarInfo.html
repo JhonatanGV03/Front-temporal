@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="Style/stylesactualizarInfo.css" rel="stylesheet" type="text/css"> 
+    <link href="Style/stylesactualizarInfo.css" rel="stylesheet" type="text/css">
+    <script>
+        function mostrarAviso() {
+            alert("¡Vas a eliminar tu cuenta!");
+        }
+    </script>
     <title>Información Personal</title>
 </head>
 <body>
@@ -99,7 +104,7 @@
     </div>
     <div id="divButton">
         <button class="enviar" type="submit">Guardar y Volver</button>
-        <button class="enviar" type="submit" style="background-color: indianred">Eliminar Cuenta</button>
+        <button class="enviar" type="submit" style="background-color: indianred" onclick="mostrarAviso()">Eliminar Cuenta</button>
     </div>
     </form>
 </body>

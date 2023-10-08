@@ -112,7 +112,8 @@
     height: 50px;
     margin-bottom: 16px;
     margin-top: 10px;
-    margin: 10px auto;
+  margin-top: 10px;
+  margin: 10px auto;
 }
 
 #añadir {
