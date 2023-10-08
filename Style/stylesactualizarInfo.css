@@ -143,7 +143,7 @@ body{
 }
 
 /* Estilos para los controles (botones y campos de entrada) */
-#controls {
+.controls {
   background: #ffffff;
   padding: 10px;
   border-radius: 4px;
@@ -154,7 +154,7 @@ body{
 }
 
 /* Estilos para los botones "Enviar" y "Añadir" */
-#enviar{
+.enviar{
   grid-column: span 1;
   background-color: #007bfe;
   color: #ffffff;
@@ -188,7 +188,7 @@ body{
 }
 
 /* Estilos para los botones al pasar el mouse */
-#enviar:hover,
+.enviar:hover,
 #añadir:hover {
   background-color: #00034f;
 }

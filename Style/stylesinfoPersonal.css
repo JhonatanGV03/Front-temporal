@@ -89,7 +89,7 @@
 }
 
 /* Estilos para los controles (botones y campos de entrada) */
-#controls {
+.controls {
   background: #ffffff;
   padding: 10px;
   border-radius: 4px;

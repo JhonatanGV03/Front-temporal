@@ -20,6 +20,7 @@ let crearCuenta = async () => {
     campos.eps = document.getElementById('eps').value;
     campos.grupoSanguineo = document.getElementById('grupoSanguineo').value;
     campos.RH = document.getElementById('RH').value;
+    console.log("si funciona yupiii");
 
 
     const peticion = await fetch("http://127.0.0.1:8081/api/paciente/registro", {
