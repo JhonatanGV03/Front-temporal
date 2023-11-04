@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ProyectoFinalSoftware2-Frontend';
+  footer = 'Proyecto Final Software 2 - 2023';
 }
