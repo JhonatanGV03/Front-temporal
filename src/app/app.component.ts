@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ProyectoFinalSoftware2-Frontend';
-  footer = 'Proyecto Final Software 2 - 2023';
+  title = 'Clinica Aurora';
+  footer = 'Clinica Aurora - 2023';
 }
