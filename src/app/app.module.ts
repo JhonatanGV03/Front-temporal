@@ -8,6 +8,8 @@ import { InicioComponent } from './pagina/inicio/inicio.component';
 import { LoginComponent } from './pagina/login/login.component';
 import { RegistroComponent } from './pagina/registro/registro.component';
 import { RegistroMedicosComponent } from './pagina/registro-medicos/registro-medicos.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AlertaComponent } from './pagina/alerta/alerta.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { RegistroMedicosComponent } from './pagina/registro-medicos/registro-med
     InicioComponent,
     LoginComponent,
     RegistroComponent,
-    RegistroMedicosComponent
+    RegistroMedicosComponent,
+    AlertaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

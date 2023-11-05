@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import {RegistroPacienteDTO} from "../../modelo/registro-paciente-dto";
+import { RegistroPacienteDTO } from "../../modelo/registro-paciente-dto";
+import { ClinicaService } from 'src/app/servicios/clinica.service';
+import { AuthService } from 'src/app/servicios/auth.service';
+import { Alerta } from 'src/app/modelo/alerta';
 
 @Component({
   selector: 'app-registro',
@@ -10,12 +13,13 @@ import {RegistroPacienteDTO} from "../../modelo/registro-paciente-dto";
 export class RegistroComponent {
 
   registroPacienteDTO: RegistroPacienteDTO;
-  ciudades:string[];
+  ciudades: string[];
   tiposSangre: String[];
   eps: String[];
-  archivos!:FileList;
+  archivos!: FileList;
+  alerta!: Alerta;
 
-  constructor(){
+  constructor(private authService: AuthService, private clinicaService: ClinicaService) {
     this.registroPacienteDTO = new RegistroPacienteDTO();
 
     this.ciudades = [];
@@ -25,54 +29,68 @@ export class RegistroComponent {
     this.cargarTiposSangres();
 
     this.eps = [];
-    this.cargarEps();
-
+    this.cargarEPS();
 
   }
-  public registrar(){
-    if(this.archivos != null && this.archivos.length > 0){
-      console.log(this.registroPacienteDTO);
-    }else{
-      console.log("Debe cargar una foto");
+  
+  public registrar() {
+    if (this.registroPacienteDTO.urlFoto.length != 0) {
+
+      this.authService.registrar(this.registroPacienteDTO).subscribe({
+        next: data => {
+          this.alerta = { mensaje: data.respuesta, tipo: "success" };
+        },
+        error: error => {
+          this.alerta = { mensaje: error.error.respuesta, tipo: "danger" };
+        }
+      });
+    } else {
+      this.alerta = { mensaje: "Debe subir una imagen", tipo: "danger" };
+    }
+  }
+
+  private cargarCiudades() {
+    this.clinicaService.listarCiudades().subscribe({
+      next: data => {
+        this.ciudades = data.respuesta;
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
+  }
+
+  private cargarTiposSangres() {
+    this.clinicaService.listarTipoSangre().subscribe({
+      next: data => {
+        this.tiposSangre = data.respuesta;
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
+  }
+
+  private cargarEPS() {
+    this.clinicaService.listarEPS().subscribe({
+      next: data => {
+        this.eps = data.respuesta;
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
+  }
+
+  public onFileChange(event: any) {
+    if (event.target.files.length > 0) {
+      this.registroPacienteDTO.urlFoto = event.target.files[0].name;
+      this.archivos = event.target.files;
     }
   }
 
   public sonIguales():boolean{
     return this.registroPacienteDTO.password == this.registroPacienteDTO.confirmaPassword;
-  }
+  }
 
-  private cargarCiudades() {
-    this.ciudades.push('Armenia');
-    this.ciudades.push('Calarcá');
-    this.ciudades.push('Pereira');
-    this.ciudades.push('Manizales');
-    this.ciudades.push('Medellín');
-  }
-
-  private cargarTiposSangres() {
-    this.tiposSangre.push('O+');
-    this.tiposSangre.push('O-');
-    this.tiposSangre.push('A+');
-    this.tiposSangre.push('A-');
-    this.tiposSangre.push('B+');
-    this.tiposSangre.push('B-');
-    this.tiposSangre.push('AB+');
-    this.tiposSangre.push('AB-');
-  }
-
-  private cargarEps() {
-    this.eps.push('SANITAS1');
-    this.eps.push('SANITAS2');
-    this.eps.push('SANITAS3');
-    this.eps.push('SANITAS4');
-    this.eps.push('SANITAS5');
-  }
-
-  public onFileChange(event:any) {
-    if (event.target.files.length > 0) {
-      const files = event.target.files;
-      this.archivos = event.target.files;
-      console.log(files);
-    }
-  }
 }
