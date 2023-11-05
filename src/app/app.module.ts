@@ -10,6 +10,7 @@ import { RegistroComponent } from './pagina/registro/registro.component';
 import { RegistroMedicosComponent } from './pagina/registro-medicos/registro-medicos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertaComponent } from './pagina/alerta/alerta.component';
+import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AlertaComponent } from './pagina/alerta/alerta.component';
     LoginComponent,
     RegistroComponent,
     RegistroMedicosComponent,
-    AlertaComponent
+    AlertaComponent,
+    GestionPqrsComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { RegistroPacienteDTO } from "../../modelo/registro-paciente-dto";
 import { ClinicaService } from 'src/app/servicios/clinica.service';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { Alerta } from 'src/app/modelo/alerta';
+import { ImagenService } from 'src/app/servicios/imagen.service';
 
 @Component({
   selector: 'app-registro',
@@ -19,7 +20,7 @@ export class RegistroComponent {
   archivos!: FileList;
   alerta!: Alerta;
 
-  constructor(private authService: AuthService, private clinicaService: ClinicaService) {
+  constructor(private authService: AuthService, private clinicaService: ClinicaService, private imagenService: ImagenService) {
     this.registroPacienteDTO = new RegistroPacienteDTO();
 
     this.ciudades = [];
@@ -32,7 +33,7 @@ export class RegistroComponent {
     this.cargarEPS();
 
   }
-  
+
   public registrar() {
     if (this.registroPacienteDTO.urlFoto.length != 0) {
 
@@ -82,6 +83,23 @@ export class RegistroComponent {
     });
   }
 
+  public subirImagen() {
+    if (this.archivos != null && this.archivos.length > 0) {
+      const formData = new FormData();
+      formData.append('file', this.archivos[0]);
+      this.imagenService.subirImagen(formData).subscribe({
+        next: data => {
+          this.registroPacienteDTO.urlFoto = data.respuesta.url;
+        },
+        error: error => {
+          this.alerta = { mensaje: error.error, tipo: "danger" };
+        }
+      });
+    } else {
+      this.alerta = { mensaje: 'Debe seleccionar una imagen y subirla', tipo: "danger" };
+    }
+  }
+
   public onFileChange(event: any) {
     if (event.target.files.length > 0) {
       this.registroPacienteDTO.urlFoto = event.target.files[0].name;
@@ -89,8 +107,8 @@ export class RegistroComponent {
     }
   }
 
-  public sonIguales():boolean{
+  public sonIguales(): boolean {
     return this.registroPacienteDTO.password == this.registroPacienteDTO.confirmaPassword;
-  }
+  }
 
 }
