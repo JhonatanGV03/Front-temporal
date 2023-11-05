@@ -4,6 +4,7 @@ import { MensajeDTO } from '../modelo/mensaje-dto';
 import { LoginDTO } from '../modelo/logindto';
 import { Observable } from 'rxjs';
 import { RegistroPacienteDTO } from '../modelo/registro-paciente-dto';
+import { RegistroMedicoDTO } from '../modelo/registro-medico-dto';
 
 @Injectable({
 providedIn: 'root'
@@ -15,6 +16,10 @@ constructor(private http:HttpClient) { }
 public registrar(paciente:RegistroPacienteDTO):Observable<MensajeDTO>{
   return this.http.post<MensajeDTO>(`${this.authURL}/registrar`, paciente);
   }
+
+public crearMedico(medico:RegistroMedicoDTO):Observable<MensajeDTO>{
+  return this.http.post<MensajeDTO>(`${this.authURL}/crearMedico`, medico);
+   }
 
   public login(loginDTO:LoginDTO):Observable<MensajeDTO>{
     return this.http.post<MensajeDTO>(`${this.authURL}/login`, loginDTO);

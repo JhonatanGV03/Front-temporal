@@ -1,3 +1,4 @@
+import { HorarioDTO } from "./horario-dto";
 
 export class RegistroMedicoDTO {
   nombre: string = "";
@@ -9,7 +10,6 @@ export class RegistroMedicoDTO {
   password: string = "";
   confirmaPassword: string = "";
   urlFoto: string = "";
-  horaInicio: string = "";
-  horaFin: string = "";
-
+  horarios: HorarioDTO[] = [];
+  
 }
