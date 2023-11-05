@@ -11,6 +11,7 @@ import { RegistroMedicosComponent } from './pagina/registro-medicos/registro-med
 import { HttpClientModule } from '@angular/common/http';
 import { AlertaComponent } from './pagina/alerta/alerta.component';
 import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.component';
+import { ModificarPacienteComponent } from './pagina/modificar-paciente/modificar-paciente.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.compone
     RegistroComponent,
     RegistroMedicosComponent,
     AlertaComponent,
-    GestionPqrsComponent
+    GestionPqrsComponent,
+    ModificarPacienteComponent
   ],
   imports: [
     BrowserModule,
