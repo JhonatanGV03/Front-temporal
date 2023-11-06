@@ -1,4 +1,4 @@
-export class actualizarPacienteDTO {
+export class ActualizarPacienteDTO {
     codigo: number = 0;
     cedula: string = "";
     correo: string = "";

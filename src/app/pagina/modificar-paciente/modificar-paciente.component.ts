@@ -7,6 +7,7 @@ import { ImagenService } from 'src/app/servicios/imagen.service';
 import { DetallePacienteDTO } from 'src/app/modelo/detalle-paciente-dto';
 import { PacienteService } from 'src/app/servicios/paciente.service';
 import { TokenService } from 'src/app/servicios/token.service';
+import { ActualizarPacienteDTO } from 'src/app/modelo/actualizar-paciente-dto';
 
 @Component({
   selector: 'app-modificar-paciente',
@@ -16,7 +17,8 @@ import { TokenService } from 'src/app/servicios/token.service';
 
 export class ModificarPacienteComponent {
 
-  detallePacienteDTO: DetallePacienteDTO;
+  detallePacienteDTO: DetallePacienteDTO | undefined;
+  actualizadoPaciente: ActualizarPacienteDTO;
   ciudades: string[];
   tiposSangre: String[];
   eps: String[];
@@ -24,7 +26,10 @@ export class ModificarPacienteComponent {
   alerta!: Alerta;
 
   constructor(private pacienteService: PacienteService, private tokenService: TokenService, private clinicaService: ClinicaService, private imagenService: ImagenService) {
-    this.detallePacienteDTO = {} as DetallePacienteDTO;
+
+    this.actualizadoPaciente = new ActualizarPacienteDTO();
+    this.obtenerPaciente();
+
 
     this.ciudades = [];
     this.cargarCiudades();
@@ -37,10 +42,22 @@ export class ModificarPacienteComponent {
 
   }
 
-  public modificarDatos() {
-    if (this.detallePacienteDTO.urlFoto.length != 0) {
+  public obtenerPaciente() {
+    let codigo = this.tokenService.getCodigo();
+    this.pacienteService.verDetallePaciente(codigo).subscribe({
+    next: data => {
+    this.detallePacienteDTO = data.respuesta;
+    },
+    error: error => {
+    console.log(error);
+    }
+    });
+  }
 
-      this.pacienteService.editarPerfil(this.detallePacienteDTO).subscribe({
+  public modificarDatos() {
+    if (this.actualizadoPaciente.urlFoto.length != 0) {
+
+      this.pacienteService.editarPerfil(this.actualizadoPaciente).subscribe({
         next: data => {
           this.alerta = { mensaje: data.respuesta, tipo: "success" };
         },
@@ -93,7 +110,7 @@ export class ModificarPacienteComponent {
       formData.append('file', this.archivos[0]);
       this.imagenService.subirImagen(formData).subscribe({
         next: data => {
-          this.detallePacienteDTO.urlFoto = data.respuesta.url;
+          this.actualizadoPaciente.urlFoto = data.respuesta.url;
         },
         error: error => {
           this.alerta = { mensaje: error.error, tipo: "danger" };
@@ -106,7 +123,7 @@ export class ModificarPacienteComponent {
 
   public onFileChange(event: any) {
     if (event.target.files.length > 0) {
-      this.detallePacienteDTO.urlFoto = event.target.files[0].name;
+      this.actualizadoPaciente.urlFoto = event.target.files[0].name;
       this.archivos = event.target.files;
     }
   }
