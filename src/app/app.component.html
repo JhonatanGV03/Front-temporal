@@ -10,6 +10,8 @@
     </ng-template>
     <ng-template #logged>
       <div class="text-end">
+        <li><a routerLink="/registro-medicos" class="nav-link px-2 text-white">Gestión médicos</a></li>
+        <li><a routerLink="/modificar-paciente" class="nav-link px-2 text-white">Modificar Datos</a></li>
         <label class="me-3">Hola {{username}}</label>
         <button type="button" (click)="logout()" class="btn btn-warning">Logout</button>
       </div>

@@ -12,13 +12,13 @@ export class PacienteService {
   private userUrl = "http://localhost:8080/api/pacientes";
   constructor(private http: HttpClient) { }
   public verDetallePaciente(codigo: number): Observable<MensajeDTO> {
-    return this.http.get<MensajeDTO>(`${this.userUrl}/detalle/${codigo}`);
+    return this.http.get<MensajeDTO>(`${this.userUrl}/detalles/${codigo}`);
   }
   public eliminarCuenta(codigo: number): Observable<MensajeDTO> {
     return this.http.delete<MensajeDTO>(`${this.userUrl}/eliminar/${codigo}`);
   }
   public editarPerfil(pacienteDTO: DetallePacienteDTO): Observable<MensajeDTO> {
-    return this.http.put<MensajeDTO>(`${this.userUrl}/editar-perfil`, pacienteDTO);
+    return this.http.put<MensajeDTO>(`${this.userUrl}/editar`, pacienteDTO);
   }
   public crearPQRS(registroPQRSDTO: RegistroPQRSDTO): Observable<MensajeDTO> {
     return this.http.post<MensajeDTO>(`${this.userUrl}/crear-pqrs`, registroPQRSDTO);
