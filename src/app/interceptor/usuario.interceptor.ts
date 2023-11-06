@@ -34,10 +34,14 @@ export class UsuarioInterceptor implements HttpInterceptor {
           const jwt: JwtDto = new JwtDto();
           jwt.token = this.tokenService.getToken()!;
           return this.authService.refresh(jwt).pipe(
-            concatMap((data) => {
-              this.tokenService.setToken(data.respuesta.token);
-              initReq = this.addToken(req, data.respuesta.token);
-              return next.handle(initReq);
+            concatMap((data: any) => {
+              if (data && data.respuesta && data.respuesta.token) {
+                this.tokenService.setToken(data.respuesta.token);
+                initReq = this.addToken(req, data.respuesta.token);
+                return next.handle(initReq);
+              } else {
+                return throwError(() => err);
+              }
             })
           );
         } else {
