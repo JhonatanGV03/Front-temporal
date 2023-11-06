@@ -124,7 +124,7 @@
 
       <div class="alert alert-danger" role="alert" *ngIf="!sonIguales()">Las contraseñas no
         coinciden</div>
-      <button (click)="registrar()" routerLink="/modificar-paciente" class="btn btn-primary" type="submit" [disabled]="f.invalid || !sonIguales()">
+      <button (click)="registrar()"  class="btn btn-primary" type="submit" [disabled]="f.invalid || !sonIguales()">
         <i class="fa-solid fa-circle-plus me-1"></i>Registrarse
       </button>
       <app-alerta [alerta]="alerta"></app-alerta>
