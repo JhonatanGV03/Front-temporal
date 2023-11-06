@@ -5,6 +5,8 @@ import { LoginComponent } from './pagina/login/login.component';
 import { RegistroComponent } from './pagina/registro/registro.component';
 import {RegistroMedicosComponent} from "./pagina/registro-medicos/registro-medicos.component";
 import { ModificarPacienteComponent } from './pagina/modificar-paciente/modificar-paciente.component';
+import { LoginGuard } from './guards/login.guard';
+import { UsuarioGuard } from './guards/usuario.guard';
 
 const routes: Routes = [
   { path: "", component: InicioComponent },
@@ -12,6 +14,9 @@ const routes: Routes = [
   { path: "registro", component: RegistroComponent },
   { path: "registro-medicos", component: RegistroMedicosComponent},
   { path: "modificar-paciente", component: ModificarPacienteComponent },
+  { path: "login", component: LoginComponent, canActivate: [LoginGuard] },
+  { path: "registro", component: RegistroComponent, canActivate: [LoginGuard] },
+  { path: "admin/registro-medicos", component: RegistroMedicosComponent, canActivate:[UsuarioGuard], data: { expectedRole: ['admin'] } },
   { path: "**", pathMatch: "full", redirectTo: "" }
 ];
 

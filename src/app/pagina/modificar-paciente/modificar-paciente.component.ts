@@ -17,7 +17,7 @@ import { ActualizarPacienteDTO } from 'src/app/modelo/actualizar-paciente-dto';
 
 export class ModificarPacienteComponent {
 
-  detallePacienteDTO: DetallePacienteDTO | undefined;
+  detallePacienteDTO: DetallePacienteDTO;
   actualizadoPaciente: ActualizarPacienteDTO;
   ciudades: string[];
   tiposSangre: String[];
@@ -26,6 +26,20 @@ export class ModificarPacienteComponent {
   alerta!: Alerta;
 
   constructor(private pacienteService: PacienteService, private tokenService: TokenService, private clinicaService: ClinicaService, private imagenService: ImagenService) {
+
+    this.detallePacienteDTO = {
+      codigo: 0, // o cualquier otro valor por defecto
+      cedula: '',
+      correo: '',
+      nombre: '',
+      telefono: '',
+      ciudad: '',
+      fechaNacimiento: '',
+      alergias: '',
+      eps: '',
+      tipoSangre: '',
+      urlFoto: ''
+    };
 
     this.actualizadoPaciente = new ActualizarPacienteDTO();
     this.obtenerPaciente();
