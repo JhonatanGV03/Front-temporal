@@ -4,12 +4,10 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
-  HttpErrorResponse
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TokenService } from '../servicios/token.service';
 import { AuthService } from '../servicios/auth.service';
-import { TokenDTO } from '../modelo/token-dto';
 
 const AUTHORIZATION = "Authorization";
 const BEARER = "Bearer ";
@@ -17,7 +15,7 @@ const BEARER = "Bearer ";
 @Injectable()
 export class UsuarioInterceptor implements HttpInterceptor {
 
-  constructor(private tokenService:TokenService, private authService:AuthService) { }
+  constructor(private tokenService: TokenService, private authService: AuthService) { }
 
   intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
