@@ -21,7 +21,7 @@
             name="cedula"
             class="form-control"
             required
-            [(ngModel)]="actualizadoPaciente.cedula"
+            [(ngModel)]="detallePacienteDTO.cedula"
           />
         </div>
       </div>
@@ -40,7 +40,7 @@
             name="nombre"
             class="form-control"
             required
-            [(ngModel)]="actualizadoPaciente.nombre"
+            [(ngModel)]="detallePacienteDTO.nombre"
           />
         </div>
       </div>
@@ -59,7 +59,7 @@
             name="telefono"
             class="form-control"
             required
-            [(ngModel)]="actualizadoPaciente.telefono"
+            [(ngModel)]="detallePacienteDTO.telefono"
           />
         </div>
       </div>
@@ -99,7 +99,7 @@
               name="alergias"
               class="form-control"
               required
-              [(ngModel)]="actualizadoPaciente.alergias"
+              [(ngModel)]="detallePacienteDTO.alergias"
             />
           </div>
         </div>
@@ -111,7 +111,7 @@
             name="ciudad"
             required
             class="form-select"
-            [(ngModel)]="actualizadoPaciente.ciudad"
+            [(ngModel)]="detallePacienteDTO.ciudad"
           >
             <option value="" selected>Seleccione una ciudad</option>
             <option [value]="item" *ngFor="let item of ciudades; index as i">
@@ -128,7 +128,7 @@
             name="eps"
             required
             class="form-select"
-            [(ngModel)]="actualizadoPaciente.eps"
+            [(ngModel)]="detallePacienteDTO.eps"
           >
             <option value="" selected>Seleccione una eps</option>
             <option [value]="item" *ngFor="let item of eps; index as i">
@@ -145,7 +145,7 @@
             name="tipoSangre"
             required
             class="form-select"
-            [(ngModel)]="actualizadoPaciente.tipoSangre"
+            [(ngModel)]="detallePacienteDTO.tipoSangre"
           >
             <option value="" selected>Seleccione un tipo de sangre</option>
             <option [value]="item" *ngFor="let item of tiposSangre; index as i">
@@ -170,7 +170,7 @@
             name="fechaNacimiento"
             class="form-control"
             required
-            [(ngModel)]="actualizadoPaciente.fechaNacimiento"
+            [(ngModel)]="detallePacienteDTO.fechaNacimiento"
           />
         </div>
       </div>
@@ -189,7 +189,7 @@
             class="form-control"
             required
             email
-            [(ngModel)]="actualizadoPaciente.correo"
+            [(ngModel)]="detallePacienteDTO.correo"
           />
         </div>
       </div>

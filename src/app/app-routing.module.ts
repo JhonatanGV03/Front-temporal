@@ -11,9 +11,9 @@ import { UsuarioGuard } from './guards/usuario.guard';
 const routes: Routes = [
   { path: "", component: InicioComponent },
   { path: "login", component: LoginComponent },
-  { path: "registro", component: RegistroComponent },
-  { path: "registro-medicos", component: RegistroMedicosComponent},
-  { path: "modificar-paciente", component: ModificarPacienteComponent },
+  { path: "registro", component: RegistroComponent, canActivate:[UsuarioGuard], data: { expectedRole: ['paciente'] }  },
+  { path: "registro-medicos", component: RegistroMedicosComponent, canActivate:[UsuarioGuard], data: { expectedRole: ['admin']}},
+  { path: "modificar-paciente", component: ModificarPacienteComponent, canActivate:[UsuarioGuard], data: { expectedRole : ['paciente']} },
   { path: "login", component: LoginComponent, canActivate: [LoginGuard] },
   { path: "registro", component: RegistroComponent, canActivate: [LoginGuard] },
   { path: "admin/registro-medicos", component: RegistroMedicosComponent, canActivate:[UsuarioGuard], data: { expectedRole: ['admin'] } },

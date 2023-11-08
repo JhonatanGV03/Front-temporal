@@ -18,7 +18,6 @@ import { ActualizarPacienteDTO } from 'src/app/modelo/actualizar-paciente-dto';
 export class ModificarPacienteComponent {
 
   detallePacienteDTO: DetallePacienteDTO;
-  actualizadoPaciente: ActualizarPacienteDTO;
   ciudades: string[];
   tiposSangre: String[];
   eps: String[];
@@ -27,21 +26,7 @@ export class ModificarPacienteComponent {
 
   constructor(private pacienteService: PacienteService, private tokenService: TokenService, private clinicaService: ClinicaService, private imagenService: ImagenService) {
 
-    this.detallePacienteDTO = {
-      codigo: 0, // o cualquier otro valor por defecto
-      cedula: '',
-      correo: '',
-      nombre: '',
-      telefono: '',
-      ciudad: '',
-      fechaNacimiento: '',
-      alergias: '',
-      eps: '',
-      tipoSangre: '',
-      urlFoto: ''
-    };
-
-    this.actualizadoPaciente = new ActualizarPacienteDTO();
+    this.detallePacienteDTO = new ActualizarPacienteDTO();
     this.obtenerPaciente();
 
 
@@ -69,9 +54,9 @@ export class ModificarPacienteComponent {
   }
 
   public modificarDatos() {
-    if (this.actualizadoPaciente.urlFoto.length != 0) {
+    if (this.detallePacienteDTO.urlFoto.length != 0) {
 
-      this.pacienteService.editarPerfil(this.actualizadoPaciente).subscribe({
+      this.pacienteService.editarPerfil(this.detallePacienteDTO).subscribe({
         next: data => {
           this.alerta = { mensaje: data.respuesta, tipo: "success" };
         },
@@ -124,7 +109,7 @@ export class ModificarPacienteComponent {
       formData.append('file', this.archivos[0]);
       this.imagenService.subirImagen(formData).subscribe({
         next: data => {
-          this.actualizadoPaciente.urlFoto = data.respuesta.url;
+          this.detallePacienteDTO.urlFoto = data.respuesta.url;
         },
         error: error => {
           this.alerta = { mensaje: error.error, tipo: "danger" };
@@ -137,7 +122,7 @@ export class ModificarPacienteComponent {
 
   public onFileChange(event: any) {
     if (event.target.files.length > 0) {
-      this.actualizadoPaciente.urlFoto = event.target.files[0].name;
+      this.detallePacienteDTO.urlFoto = event.target.files[0].name;
       this.archivos = event.target.files;
     }
   }

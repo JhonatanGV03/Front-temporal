@@ -71,8 +71,7 @@ export class TokenService {
     }
     const token = this.getToken();
     const values = this.decodePayload(token!);
-    const roles = values.roles;
-    return roles[0];
+    return values.rol;
   }
 
 }
