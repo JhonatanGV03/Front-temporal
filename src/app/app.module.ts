@@ -13,6 +13,7 @@ import { AlertaComponent } from './pagina/alerta/alerta.component';
 import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.component';
 import { ModificarPacienteComponent } from './pagina/modificar-paciente/modificar-paciente.component';
 import { UsuarioInterceptor } from './interceptor/usuario.interceptor';
+import { UsuarioInterceptor } from './interceptor/usuario.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { UsuarioInterceptor } from './interceptor/usuario.interceptor';
     FormsModule,
     HttpClientModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: UsuarioInterceptor, multi: true }],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: UsuarioInterceptor, multi: true }
+  { provide: HTTP_INTERCEPTORS, useClass: UsuarioInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
