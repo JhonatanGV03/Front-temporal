@@ -12,7 +12,7 @@ export class PacienteService {
   private userUrl = "http://localhost:8080/api/pacientes";
   constructor(private http: HttpClient) { }
   public verDetallePaciente(codigo: number): Observable<MensajeDTO> {
-    return this.http.get<MensajeDTO>(`${this.userUrl}/detalles/${codigo}`);
+    return this.http.get<MensajeDTO>(`${this.userUrl}/detalle/${codigo}`);
   }
   public eliminarCuenta(codigo: number): Observable<MensajeDTO> {
     return this.http.delete<MensajeDTO>(`${this.userUrl}/eliminar/${codigo}`);
