@@ -1,4 +1,4 @@
-export class ImagenDTO{
-    id: string = "";
-    url: string = "";
+export class ImagenDTO {
+  id: string = '';
+  url: string = '';
 }

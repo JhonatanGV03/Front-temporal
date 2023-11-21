@@ -1,0 +1,121 @@
+<div class="card">
+  <div class="card-header ps-5 d-flex justify-content-center align-items-center">
+    <h5 class="mb-0">
+      <i class="fa-solid fa-pen-to-square me-3 fa-lg"></i>Modificar Médico
+    </h5>
+  </div>
+
+  <div class="card-body p-5">
+    <form #f="ngForm" (ngSubmit)="guardar()">
+      <div class="row">
+
+        <div class="col-sm-6">
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Correo:</label>
+            <div class="col-sm-10">
+              <input #correo='ngModel' type="email" name="correo" placeholder="Ingrese el correo"
+                     required email class="form-control"
+                     [ngClass]="correo.invalid && (correo.dirty || correo.touched) ? 'is-invalid' : ''"
+                     [(ngModel)]="detalleMedicoDTO.correo"/>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-4 col-form-label">Nombre Completo:</label>
+            <div class="col-sm-10">
+              <input #nombre='ngModel' type="text" name="nombre" placeholder="Ingrese el nombre del médico"
+                     required class="form-control"
+                     [ngClass]="nombre.invalid && (nombre.dirty || nombre.touched) ? 'is-invalid' : ''"
+                     [(ngModel)]="detalleMedicoDTO.nombre"/>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-4 col-form-label">Cédula:</label>
+            <div class="col-sm-10">
+              <input #cedula='ngModel' type="text" name="cedula" placeholder="Ingrese la cédula del médico"
+                     required class="form-control"
+                     [ngClass]="cedula.invalid && (cedula.dirty || cedula.touched) ? 'is-invalid' : ''"
+                     [(ngModel)]="detalleMedicoDTO.cedula"/>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Telefono:</label>
+            <div class="col-sm-10">
+              <input #telefono='ngModel' type="text" name="telefono" placeholder="Ingrese el telefono del médico"
+                     required class="form-control"
+                     [ngClass]="telefono.invalid && (telefono.dirty || telefono.touched) ? 'is-invalid' : ''"
+                     [(ngModel)]="detalleMedicoDTO.telefono"/>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Ciudad:</label>
+            <div class="col-sm-10">
+              <Select name="ciudad" required class="form-select" [(ngModel)]="detalleMedicoDTO.ciudad">
+                <option value="" selected>Seleccione una ciudad</option>
+                <option [value]="" *ngFor="let item of ciudades; index as i" >{{item}}</option>
+              </Select>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+
+          <div class="mb-5">
+            <div class="d-flex align-items-center">
+              <img src="{{foto}}" class="userPh">
+              <button class="btn btn-primary"><i class="fa-solid fa-cloud-arrow-up me-1"></i>Subir foto</button>
+            </div>
+
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label">Foto:</label>
+              <div class="col-sm-10">
+                <input type="file" name="foto" (change)="onFileChange($event) " />
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Especialidad:</label>
+            <div class="col-sm-10">
+              <Select name="especialidad" required class="form-select" [(ngModel)]="detalleMedicoDTO.especialidad">
+                <option value="" selected>Seleccione una especialidad</option>
+                <option [value]="" *ngFor="let item of especialidades; index as i" >{{item}}</option>
+              </Select>
+            </div>
+          </div>
+
+          <div class="mb-3 row"> <!-- Hay que revisarlo -->
+            <label class="col-sm-3 col-form-label">Hora inicio:</label>
+            <div class="col-sm-10">
+              <Select name="horaInicio" required class="form-select">
+                <option value="" selected>Seleccione una hora de entrada</option>
+              </Select>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Hora fin:</label>
+            <div class="col-sm-10">
+              <Select name="horaFin" required class="form-select">
+                <option value="" selected>Seleccione una hora de salida</option>
+              </Select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center">
+        <button class="btn btn-success m-4" type="submit" [disabled]="f.invalid"><i class="fa-solid fa-circle-plus
+        me-1"></i>Guardar</button>
+
+        <button class="btn btn-danger m-4" type="button" routerLink="/gestion-medicos">
+          <i class="fa-solid fa-ban me-1"></i>Cancelar</button>
+      </div>
+      <app-alerta [alerta]="alerta"></app-alerta>
+    </form>
+  </div>
+</div>

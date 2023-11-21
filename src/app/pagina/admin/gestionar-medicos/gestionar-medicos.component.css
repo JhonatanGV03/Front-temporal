@@ -1,0 +1,19 @@
+.table-wrapper {
+  height: 25rem;
+  overflow: auto;
+}
+
+.table-wrapper table thead {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.table-wrapper table thead th{
+  background-color: #ececec;
+  border-bottom: 2px solid #ddd;
+}
+
+.input-group{
+  width: 50%;
+}

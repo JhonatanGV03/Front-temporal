@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-header ps-5 d-flex justify-content-center align-items-center">
+        <h5 class="mb-0">
+            <i class="fa-regular fa-calendar-check me-2"></i>Historial de citas realizadas
+        </h5>
+    </div>
+    <div class="card-body">
+        <div class="table-wrapper">
+            <table class="table table-striped table-hover my-3">
+                <thead>
+                <tr>
+                    <th>Fecha Atención</th>
+                    <th>Hora Atención</th>
+                    <th>Paciente</th>
+                    <th>Cédula</th>
+                    <th>Detalles</th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                <tr *ngFor="let item of citas">
+                    <td><p>{{item.fechaAtencion}}</p></td>
+                    <td><p>{{item.horaAtencion}}</p></td>
+                    <td><p>{{item.nomPaciente}}</p></td>
+                    <td><p>{{item.cedulaPaciente}}</p></td>
+
+                    <td><a routerLink="/detalles-cita-historial/{{item}}" ><i class="fa-solid fa-circle-info me-2"></i>Detalles Consulta</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

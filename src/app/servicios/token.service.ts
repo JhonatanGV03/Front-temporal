@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Buffer } from "buffer";
-import { SesionService } from './sesion.service';
+import { Buffer } from 'buffer';
 
-const TOKEN_KEY = "AuthToken";
-
+const TOKEN_KEY = 'AuthToken';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TokenService {
-  constructor(private router: Router, private sesionService: SesionService) { }
+  constructor(private router: Router) {}
 
   public setToken(token: string) {
     window.sessionStorage.removeItem(TOKEN_KEY);
@@ -29,18 +27,20 @@ export class TokenService {
 
   public login(token: string) {
     this.setToken(token);
-    this.sesionService.updateSession(true);
-    this.router.navigate(["/"]);
+    this.router.navigate(['/']).then(() => {
+      window.location.reload();
+    });
   }
 
   public logout() {
     window.sessionStorage.clear();
-    this.sesionService.updateSession(false);
-    this.router.navigate(["/login"]);
+    this.router.navigate(['/login']).then(() => {
+      window.location.reload();
+    });
   }
 
   private decodePayload(token: string): any {
-    const payload = token!.split(".")[1];
+    const payload = token!.split('.')[1];
     const payloadDecoded = Buffer.from(payload, 'base64').toString('ascii');
     const values = JSON.parse(payloadDecoded);
     return values;
@@ -55,14 +55,13 @@ export class TokenService {
     return 0;
   }
 
-  public getUsername(): string | null {
-    if (!this.isLogged()) {
-      return null;
-    }
+  public getEmail(): string {
     const token = this.getToken();
-    const values = this.decodePayload(token!);
-    const username = values.sub;
-    return username;
+    if (token) {
+      const values = this.decodePayload(token);
+      return values.sub;
+    }
+    return '';
   }
 
   public getRole(): string {
@@ -72,6 +71,15 @@ export class TokenService {
     const token = this.getToken();
     const values = this.decodePayload(token!);
     return values.rol;
+  }
+    public getUsername(): string{
+    if (!this.isLogged()) {
+      return "";
+    }
+    const token = this.getToken();
+    const values = this.decodePayload(token!);
+    const username = values.nombre;
+    return username;
   }
 
 }

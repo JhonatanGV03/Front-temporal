@@ -1,0 +1,21 @@
+div{
+  margin-top: 5.6rem;
+  margin-bottom: 5.6rem;
+  opacity: 0.6;
+}
+img{
+  width: 11%;
+  height: 11%;
+}
+.p1{
+  font-family: "Open Sans";
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0d6efd;
+}
+.p2{
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-weight: bold;
+  color: #0d6efd;
+}

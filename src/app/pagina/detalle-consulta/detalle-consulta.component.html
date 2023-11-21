@@ -1,0 +1,153 @@
+<div class="card">
+  <div
+    class="card-header ps-5 pt-4 pb-4 d-flex justify-content-center align-items-center"
+  >
+    <h5 class="mb-0">
+      <i class="fa-solid fa-user me-3"></i>Información de la Cita y Consulta
+    </h5>
+  </div>
+  <div class="card-body p-5 justify-content-center align-items-center">
+    <form #f="ngForm">
+      <div class="card">
+        <div
+          class="card-header ps-5 pt-4 pb-4 d-flex justify-content-center align-items-center"
+        >
+          <h5 class="mb-0"><i class="fa-solid fa-clock me-3"></i>Cita</h5>
+        </div>
+        <div class="card-body p-5 justify-content-center align-items-center">
+          <!-- Código -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Código:</label>
+            <div class="col-sm-10">
+              <label class="form-control">{{
+                detallesConsultaDTO?.codigo
+              }}</label>
+            </div>
+          </div>
+
+          <!-- Paciente -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Paciente:</label>
+            <div class="col-sm-10">
+              <label class="form-control">{{
+                detallesConsultaDTO?.nomPaciente
+              }}</label>
+            </div>
+          </div>
+
+          <!-- Fecha de creación -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Fecha de creación:</label>
+            <div class="col-sm-10">
+              <label class="form-control">{{
+                detallesConsultaDTO?.fechaCreacion
+              }}</label>
+            </div>
+          </div>
+
+          <!-- Fecha cita -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Fecha cita:</label>
+            <div class="col-sm-10">
+              <label class="form-control">{{
+                detallesConsultaDTO?.fechaCita
+              }}</label>
+            </div>
+          </div>
+
+          <!-- Hora cita -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Hora cita:</label>
+            <div class="col-sm-10">
+              <label class="form-control">{{
+                detallesConsultaDTO?.horaCita
+              }}</label>
+            </div>
+          </div>
+
+          <!-- Motivo consulta -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Motivo Consulta:</label>
+            <div class="col-sm-10">
+              <label class="form-control">{{
+                detallesConsultaDTO?.motivoConsulta
+              }}</label>
+            </div>
+          </div>
+
+          <!-- Estado cita -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Estado cita:</label>
+            <div class="col-sm-10">
+              <label class="form-control">{{
+                detallesConsultaDTO?.estadoCita
+              }}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloque de información de Consulta -->
+      <div class="card">
+        <div
+          class="card-header ps-5 pt-4 pb-4 d-flex justify-content-center align-items-center"
+        >
+          <h5 class="mb-0">
+            <i class="fa-solid fa-stethoscope me-3"></i>Consulta
+          </h5>
+        </div>
+        <div class="card-body p-5 justify-content-center align-items-center">
+          <!-- Médico -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Médico:</label>
+            <div class="col-sm-10">
+              <label class="form-control">{{
+                detallesConsultaDTO?.nomMedico
+              }}</label>
+            </div>
+          </div>
+
+          <!-- Especialidad -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Especialidad:</label>
+            <div class="col-sm-10">
+              <label class="form-control">{{
+                detallesConsultaDTO?.especialidad
+              }}</label>
+            </div>
+          </div>
+
+          <!-- Notas medicas -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Notas medicas:</label>
+            <div class="col-sm-10">
+              <label class="form-control">{{
+                detallesConsultaDTO?.notasMedicas
+              }}</label>
+            </div>
+          </div>
+
+          <!-- Diagnóstico -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Diagnóstico:</label>
+            <div class="col-sm-10">
+              <label class="form-control">{{
+                detallesConsultaDTO?.diagnostico
+              }}</label>
+            </div>
+          </div>
+
+          <!-- Tratamiento -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Tratamiento:</label>
+            <div class="col-sm-10">
+              <label class="form-control">{{
+                detallesConsultaDTO?.tratamiento
+              }}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,153 @@
+<div class="card">
+    <div class="card-header ps-5 d-flex justify-content-center align-items-center">
+        <h5 class="mb-0">
+            <i class="fa-regular fa-calendar-check me-2"></i>Atención Médica
+        </h5>
+    </div>
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <div class="card col-5">
+                <div class="card-header ps-5 d-flex justify-content-center align-items-center">
+                    <h5 class="mb-0">
+                        Información del Paciente
+                    </h5>
+                </div>
+
+                <div class="card-body ">
+                    <form #f="ngForm" >
+                        <div class="row">
+                            <div class="col-sm-6">
+
+                                <div class="mb-3 row">
+                                    <label class="col-sm-5 col-form-label">Paciente:</label>
+                                    <div class="col-sm-10">
+                                        <label class="form-control">{{registroConsultaDTO?.nombre}} hola</label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-sm-5 col-form-label">Cédula:</label>
+                                    <div class="col-sm-10">
+                                        <label class="form-control">{{registroConsultaDTO?.nombre}}h</label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-xs-5 col-form-label">Fecha y Hora: </label>
+                                    <div class="col-sm-10">
+                                        <label class="form-control">{{registroConsultaDTO?.fechaHoraAtencion}}h</label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-sm-5 col-form-label">G.S y R.H.</label>
+                                    <div class="col-sm-10">
+                                        <label class="form-control">{{registroConsultaDTO?.tipoSangre}}h</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+
+                                <div class="mb-5">
+                                    <div class="d-flex align-items-center">
+                                        <img src="{{foto}}" class="userPh">
+                                    </div>
+
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-sm-5 col-form-label">Correo:</label>
+                                    <div class="col-sm-10">
+                                        <label class="form-control">{{registroConsultaDTO?.correo}}</label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row"> <!--  -->
+                                    <label class="col-sm-5 col-form-label">EPS:</label>
+                                    <div class="col-sm-10">
+                                        <label class="form-control">{{registroConsultaDTO?.eps}}</label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-sm-5 col-form-label">Alergias:</label>
+                                    <div class="col-sm-10">
+                                        <label class="form-control">{{registroConsultaDTO?.alergias}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-5 col-form-label">Motivos:</label>
+                                <div class="col-sm-10">
+                                    <label class="form-control">{{registroConsultaDTO?.motivoConsulta}}</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-primary m-2" type="button" routerLink="/gestion-citas-medico">
+                                <i class="fa-solid fa-arrow-right fa-rotate-180 me-1"></i>Regresar</button>
+
+                            <div class="d-flex justify-content-center align-items-center">
+
+                                <button class="btn btn-success m-2" type="button" routerLink="/historial-paciente/{{registroConsultaDTO.codigoPaciente}}">
+                                    <i class=""></i>Ver historial</button>
+                                <button class="btn btn-danger m-2" type="button" routerLink="/gestion-citas-medico">
+                                    <i class=""></i>Finalizar cita</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card col-7" >
+                <div class="card-header ps-5 d-flex justify-content-center align-items-center">
+                    <h5 class="mb-0">
+                        Diagnostico Médico
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form #f="ngForm" >
+                        <div class="mb-5">
+                            <label class="col-form-label">Notas médicas: </label>
+                            <textarea
+                                #motivo="ngModel"
+                                [ngClass]=" motivo.invalid && (motivo.dirty || motivo.touched)? 'is-invalid': ''"
+                                type="text"
+                                [(ngModel)]="registroConsultaDTO.notasMedico"
+                                name="notas"
+                                required placeholder="Ingrese las notas médicas"
+                                class="form-control"
+                            ></textarea>
+                        </div>
+                        <div class="mb-5">
+                            <label class="col-form-label">Diagnostigo: </label>
+                            <textarea
+                                #motivo="ngModel"
+                                [ngClass]=" motivo.invalid && (motivo.dirty || motivo.touched)? 'is-invalid': ''"
+                                type="text"
+                                [(ngModel)]="registroConsultaDTO.diagnosticoMedico"
+                                name="diagnostico"
+                                required placeholder="Ingrese el diagnostico médico"
+                                class="form-control"
+                            ></textarea>
+                        </div>
+                        <div class="mb-5">
+                            <label class="col-form-label">Tratamiento: </label>
+                            <textarea
+                                #motivo="ngModel"
+                                [ngClass]=" motivo.invalid && (motivo.dirty || motivo.touched)? 'is-invalid': ''"
+                                type="text"
+                                [(ngModel)]="registroConsultaDTO.tratamientoMedico"
+                                name="tratamiento"
+                                required placeholder="Ingrese el tratamiento médico"
+                                class="form-control"
+                            ></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
